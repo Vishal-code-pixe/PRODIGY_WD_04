@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Portfolio</title> 
+    <style style="background-color: #000000;">
+        :root {
+            --primary-color: #000000f6;
+            --secondary-color: #cc2323;
+            --text-color: #b11f1f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: rgb(180, 21, 21);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        
+
+        nav {
+            background-color: #ffffff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a { 
+            border-color: #000000;
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        section {
+            padding: 50px 0;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: black;
+            border: 1px solid #000000;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--secondary-color);
+            color: rgb(0, 0, 0);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="home" class="container">
+        <img src="/api/placeholder/200/200" alt="Profile" class="profile-image">
+        <h1>VISHAL VIJAY</h1>
+        <h2>Full Stack Web Developer</h2>
+        <p>Passionate about creating innovative and responsive web solutions</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>
+            I'm a dedicated web developer with 1+ years of experience in creating 
+            dynamic and user-friendly web applications. Specializing in modern 
+            JavaScript frameworks and responsive design, I transform complex 
+            challenges into elegant digital solutions.
+        </p>
+    </section>
+
+    <section id="skills" class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express</span>
+            <span class="skill-tag">MongoDB</span>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>E-Commerce Platform</h3>
+                <p>Full-stack marketplace with payment integration</p>
+            </div>
+            <div class="project-card">
+                <h3>Task Management App</h3>
+                <p>Real-time collaboration tool with user authentication</p>
+            </div>
+            <div class="project-card">
+                <h3>Weather Forecast App</h3>
+                <p>Responsive web app using geolocation and weather APIs</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <p>Email: meghavishal566@gmail.com</p>
+        <p>LinkedIn: /in/vishalvijay</p>
+        <p>GitHub: @Vishal-code-pixe</p>
+    </section>
+
+    <footer>
+        <p>© 2024 Vishal Vijay . All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple project hover effect
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
